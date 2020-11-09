@@ -6,6 +6,8 @@ const Home = () => {
     <div className="App">
       <h1>SMITH</h1>
       <Link to="/login">se déconnecter</Link>
+      <br></br>
+      <Link to="/back">Test serveur back</Link>
     </div>
   );
 };
