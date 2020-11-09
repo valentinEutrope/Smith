@@ -10,6 +10,8 @@ const Home = () => {
       <Link to="/login">
         <ButtonDanger radius={1}>Se déconnecter</ButtonDanger>
       </Link>
+      <br></br>
+      <Link to="/back">Test serveur back</Link>
     </div>
   );
 };
