@@ -8,6 +8,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   border: 0;
+  border-radius: ${(props) => props.radius || "0"};
 
   background-color: ${th("colors.white")};
   color: ${th("colors.black")};
@@ -19,7 +20,6 @@ export const ButtonRounded = styled(Button)`
 
 export const ButtonSuccess = styled(Button)`
   background-color: ${th("colors.success")};
-  border-radius: ${(props) => props.radius || "0"};
   transition: background-color 300ms;
 
   &:hover {
@@ -29,7 +29,6 @@ export const ButtonSuccess = styled(Button)`
 
 export const ButtonDanger = styled(Button)`
   background-color: ${th("colors.danger")};
-  border-radius: ${(props) => props.radius || "0"};
   transition: background-color 300ms;
 
   &:hover {
