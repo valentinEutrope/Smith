@@ -8,7 +8,7 @@ const Home = () => {
     <div className="App">
       <h1>SMITH</h1>
       <Link to="/login">
-        <ButtonDanger radius="6">Se déconnecter</ButtonDanger>
+        <ButtonDanger radius={6}>Se déconnecter</ButtonDanger>
       </Link>
     </div>
   );

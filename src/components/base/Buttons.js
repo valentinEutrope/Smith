@@ -8,7 +8,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   border: 0;
-  border-radius: ${(props) => props.radius || "0"};
+  border-radius: ${(props) => props.radius || "0"}px;
 
   background-color: ${th("colors.white")};
   color: ${th("colors.black")};
