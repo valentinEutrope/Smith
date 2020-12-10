@@ -14,24 +14,24 @@ export const Button = styled.button`
   color: ${th("colors.black")};
 `;
 
-export const ButtonRounded = styled(Button)`
-  border-radius: 6rem;
-`;
-
 export const ButtonSuccess = styled(Button)`
   background-color: ${th("colors.success")};
-  transition: background-color 300ms;
+  color: ${th("colors.white")};
+  transition: background-color 300ms, border-radius 400ms;
 
   &:hover {
     background-color: ${th("colors.success.700")};
+    border-radius: calc(${(props) => props.radius || "0"}px + 4px);
   }
 `;
 
 export const ButtonDanger = styled(Button)`
   background-color: ${th("colors.danger")};
-  transition: background-color 300ms;
+  color: ${th("colors.white")};
+  transition: background-color 300ms, border-radius 400ms;
 
   &:hover {
     background-color: ${th("colors.danger.700")};
+    border-radius: calc(${(props) => props.radius || "0"}px + 4px);
   }
 `;
