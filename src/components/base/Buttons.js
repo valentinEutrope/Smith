@@ -17,21 +17,19 @@ export const Button = styled.button`
 export const ButtonSuccess = styled(Button)`
   background-color: ${th("colors.success")};
   color: ${th("colors.white")};
-  transition: background-color 300ms, border-radius 400ms;
+  transition: background-color 350ms, border-radius 400ms;
 
   &:hover {
     background-color: ${th("colors.success.700")};
-    border-radius: calc(${(props) => props.radius || "0"}px + 4px);
   }
 `;
 
 export const ButtonDanger = styled(Button)`
   background-color: ${th("colors.danger")};
   color: ${th("colors.white")};
-  transition: background-color 300ms, border-radius 400ms;
+  transition: background-color 350ms, border-radius 400ms;
 
   &:hover {
     background-color: ${th("colors.danger.700")};
-    border-radius: calc(${(props) => props.radius || "0"}px + 4px);
   }
 `;
