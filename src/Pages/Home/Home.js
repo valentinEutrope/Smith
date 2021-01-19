@@ -13,6 +13,8 @@ const Home = () => {
       <Link to="/template/character-sheet">
         <Button radius={1}>Fiche personnage</Button>
       </Link>
+      <br></br>
+      <Link to="/back">Test serveur back</Link>
     </div>
   );
 };
