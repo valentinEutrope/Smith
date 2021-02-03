@@ -8,9 +8,14 @@ Each guest player can connect to the game created by the master.
 
 The app manage the differents rights between Master and players (ex: a player can't modify a template).
 
-# First
+# Install
 
-use `npm install` and run `npm start`.
+- Project use Jake library: install locally (devDependencies) with `npm i` and perhaps you need to install it globally, use version 8 `npm i -g jake@8.1.1`
+- Now you can list jake task with `jake` and use `jake install` to run npm i for every scope
+
+If jake doesn't work for any reason, you can launch install manually with `npm i && cd src/client && npm i && cd ../server && npm i`
+
+Now you can run npm start from root project
 
 # Create React App
 
