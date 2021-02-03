@@ -16,7 +16,12 @@ export const breakpoint = (breakpoint) => ({ theme }) =>
 export const th = (key, unit = "rem") => ({ theme }) => {
   let data = _get(theme, key);
 
-  if (key && (key.includes("spaces") || key.includes("sizes"))) {
+  if (
+    key &&
+    (key.includes("spaces") ||
+      key.includes("sizes") ||
+      key.includes("fontSizes"))
+  ) {
     data = String(data).concat(unit);
   }
 

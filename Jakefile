@@ -10,9 +10,9 @@ task("default", function () {
 
 desc("run npm install for client and server");
 task("install", function () {
-  console.log("launch npm install in client and server folders");
+  console.log("launch npm install in root, client and server scope");
   jake.exec(
-    "npm i --prefix ./src/client && npm i --prefix ./src/server",
+    "npm i && npm i --prefix ./src/client && npm i --prefix ./src/server",
     execConfig
   );
 });
