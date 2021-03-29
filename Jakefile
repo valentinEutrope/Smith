@@ -16,10 +16,10 @@ task("default", function () {
   jake.exec("jake -T", execConfig);
 });
 
-desc("run npm install for root, client and server");
+desc("run npm install for client and server");
 task("install", function () {
   jake.exec(
-    "npm i && npm i --prefix ./src/client && npm i --prefix ./src/server",
+    "npm i --prefix ./src/client && npm i --prefix ./src/server",
     execConfig
   );
 });
