@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import { SidebarContainer } from "./styled";
 import { Button } from "../base/Buttons";
+import { Input } from "../base/Inputs";
 
 const SidebarCreation = ({ addElement, setElements, elements }) => {
   const [label, setLabel] = useState("");
@@ -13,9 +14,9 @@ const SidebarCreation = ({ addElement, setElements, elements }) => {
       <Button onClick={() => addElement(setElements, elements, label)}>
         Ajouter élément
       </Button>
-      <input
+      <label>Caractéristique</label>
+      <Input
         type="text"
-        placeholder="label"
         onChange={(e) => setLabel(e.target.value)}
         value={label}
       />
