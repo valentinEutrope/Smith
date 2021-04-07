@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import { th } from "../../helpers/themeHelpers";
+import { th } from "../themeHelpers";
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
   /* Box sizing rules */
   *,
   *::before,
@@ -82,30 +82,30 @@ export const GlobalStyle = createGlobalStyle`
 
   /* ==== Typography ==== */
   html {
-    font-size: ${th("variables.fontSize.base", "em")`};
+    font-size: ${th("variables.fontSize.base", "em")};
   }
 
   body {
-    ${th("typography.body")}
+    font-family: ${th("typography.body")}; 
     line-height: ${th("variables.lineHeight")};
   }
 
   h1,
   h2,
   h3 {
-    ${th("typography.title")}
+    font-family: ${th("typography.title")};    
     font-weight: bold;
     text-transform: uppercase;
   }
 
   h1 {
-    font-size: ${th("variables.fontSize.header.big")}
+    font-size: ${th("variables.fontSize.header.big")};
   }
   h2 {
-    font-size: ${th("variables.fontSize.header.medium")}
+    font-size: ${th("variables.fontSize.header.medium")};
   }
   h3 {
-    font-size: ${th("variables.fontSize.header.small")}
+    font-size: ${th("variables.fontSize.header.small")};
   }
 
   a {
@@ -113,9 +113,10 @@ export const GlobalStyle = createGlobalStyle`
   }
 
 
-/* ==== Colors ==== */
-body {
-  background-color: ${th("colors.white.500")};
-}
-
+  /* ==== Colors ==== */
+  body {
+    background-color: ${th("colors.white.500")};
+  }
 `;
+
+export default GlobalStyle;
