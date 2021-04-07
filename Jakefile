@@ -29,13 +29,13 @@ namespace("client", () => {
 
   namespace("npm", () => {
     desc(
-      "run npm i in client, for install module -> jake client:npm:install[module-name]"
+      "jake client:npm:install[module-name]"
     );
     task("install", [], (moduleName) => {
       jake.exec(makeNpmCmd(clientPath, "i", moduleName), execConfig);
     });
 
-    desc("uninstall module -> jake client:npm:uninstall[module-name]");
+    desc("jake client:npm:uninstall[module-name]");
     task("uninstall", [], (moduleName) => {
       jake.exec(makeNpmCmd(clientPath, "uninstall", moduleName), execConfig);
     });
@@ -47,13 +47,13 @@ namespace("server", () => {
 
   namespace("npm", () => {
     desc(
-      "run npm i in server, for install module -> jake server:npm:install[module-name]"
+      "jake server:npm:install[module-name]"
     );
     task("install", [], (moduleName) => {
       jake.exec(makeNpmCmd(serverPath, "i", moduleName), execConfig);
     });
 
-    desc("uninstall module -> jake server:npm:uninstall[module-name]");
+    desc("jake server:npm:uninstall[module-name]");
     task("uninstall", [], (moduleName) => {
       jake.exec(makeNpmCmd(serverPath, "uninstall", moduleName), execConfig);
     });
