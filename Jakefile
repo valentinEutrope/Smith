@@ -4,10 +4,17 @@ let { task, desc, namespace } = require("jake");
 const execConfig = { interactive: true };
 
 const makeNpmCmd = (path, action, moduleName) => {
-  if (moduleName && moduleName !== undefined) {
-    return `npm ${action} ${moduleName} --prefix ${path}`;
-  }
+  let cmd = "";
 
+  if (moduleName && moduleName !== undefined) {
+    cmd = `npm ${action} --prefix ${path} ${moduleName}`;
+
+    console.log(cmd);
+    return cmd;
+  }
+  cmd = `npm ${action} --prefix ${path}`;
+
+  console.log(cmd);
   return `npm ${action} --prefix ${path}`;
 };
 
@@ -18,19 +25,18 @@ task("default", function () {
 
 desc("run npm install for client and server");
 task("install", function () {
-  jake.exec(
-    "npm i --prefix ./src/client && npm i --prefix ./src/server",
-    execConfig
-  );
+  let cmd =
+    "chmod 755 src && npm i --prefix ./src/client && npm i --prefix ./src/server";
+
+  console.log(cmd);
+  jake.exec(cmd, execConfig);
 });
 
 namespace("client", () => {
   const clientPath = "./src/client";
 
   namespace("npm", () => {
-    desc(
-      "jake client:npm:install[module-name]"
-    );
+    desc("jake client:npm:install[module-name]");
     task("install", [], (moduleName) => {
       jake.exec(makeNpmCmd(clientPath, "i", moduleName), execConfig);
     });
@@ -46,9 +52,7 @@ namespace("server", () => {
   const serverPath = "./src/server";
 
   namespace("npm", () => {
-    desc(
-      "jake server:npm:install[module-name]"
-    );
+    desc("jake server:npm:install[module-name]");
     task("install", [], (moduleName) => {
       jake.exec(makeNpmCmd(serverPath, "i", moduleName), execConfig);
     });
