@@ -9,3 +9,7 @@ export const SidebarContainer = styled.div`
   border-rigth: solid 1px ${th("colors.grey.200")};
   box-shadow: 2px 0 2px ${th("colors.grey.600")};
 `;
+
+export const CreateItem = styled.div`
+  margin: ${space(["sm", "none"])};
+`;
