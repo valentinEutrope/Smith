@@ -18,19 +18,14 @@ task("default", function () {
 
 desc("run npm install for client and server");
 task("install", function () {
-  jake.exec(
-    "npm i --prefix ./src/client && npm i --prefix ./src/server",
-    execConfig
-  );
+  jake.exec("npm i --prefix ./src/client", execConfig);
 });
 
 namespace("client", () => {
   const clientPath = "./src/client";
 
   namespace("npm", () => {
-    desc(
-      "jake client:npm:install[module-name]"
-    );
+    desc("jake client:npm:install[module-name]");
     task("install", [], (moduleName) => {
       jake.exec(makeNpmCmd(clientPath, "i", moduleName), execConfig);
     });
@@ -38,24 +33,6 @@ namespace("client", () => {
     desc("jake client:npm:uninstall[module-name]");
     task("uninstall", [], (moduleName) => {
       jake.exec(makeNpmCmd(clientPath, "uninstall", moduleName), execConfig);
-    });
-  });
-});
-
-namespace("server", () => {
-  const serverPath = "./src/server";
-
-  namespace("npm", () => {
-    desc(
-      "jake server:npm:install[module-name]"
-    );
-    task("install", [], (moduleName) => {
-      jake.exec(makeNpmCmd(serverPath, "i", moduleName), execConfig);
-    });
-
-    desc("jake server:npm:uninstall[module-name]");
-    task("uninstall", [], (moduleName) => {
-      jake.exec(makeNpmCmd(serverPath, "uninstall", moduleName), execConfig);
     });
   });
 });
