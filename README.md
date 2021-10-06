@@ -3,4 +3,4 @@
 Smith is a React wep app to manage a role play game.
 # Install
 
-`npm i && cd src/ && npm i && cd ../`
+`npm i && cd src/client && npm i && cd ../../`
