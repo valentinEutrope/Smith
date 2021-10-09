@@ -1,9 +1,12 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import { H2 } from "../../components/base/Headers";
 import { WorldImage, Worlds, World } from "./styled";
 
 const WorldList = () => {
+  const history = useHistory();
+
   const worlds = [
     {
       id: 0,
@@ -25,7 +28,7 @@ const WorldList = () => {
       <Worlds>
         {worlds.map((world) => {
           return (
-            <World>
+            <World onClick={() => history.push(`/world/${world.id}`)}>
               <span>{world.name}</span>
               <WorldImage src={world.imgUrl} />
             </World>
