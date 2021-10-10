@@ -1,1 +1,1 @@
-export { defautl } from "./World";
+export { default } from "./World";
