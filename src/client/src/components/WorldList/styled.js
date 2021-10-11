@@ -24,10 +24,10 @@ export const World = styled.div`
   &:hover {
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
   }
+`;
 
-  span {
-    font-size: ${th("fontSizes.header.small")};
-  }
+export const WorldName = styled.h3`
+  font-size: ${th("fontSizes.header.small")};
 `;
 
 export const WorldImage = styled.img`
