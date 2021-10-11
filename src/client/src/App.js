@@ -6,12 +6,14 @@ import Providers from "./Providers";
 import Home from "./Pages/Home";
 import CharacterSheetTemplate from "./Pages/SheetTemplates/CharacterSheetTemplate";
 import World from "./Pages/World/World";
+import Header from "./components/Header";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
       <Providers>
+        <Header />
         <Router>
           <Switch>
             <Route exact path="/">
