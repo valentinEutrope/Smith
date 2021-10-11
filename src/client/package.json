@@ -41,5 +41,5 @@
   "devDependencies": {
     "concurrently": "^5.3.0"
   },
-  "main" : "./electron-start.js"
+  "main": "./electron-start.js"
 }

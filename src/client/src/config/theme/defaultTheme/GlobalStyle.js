@@ -82,7 +82,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* ==== Typography ==== */
   html {
-    font-size: ${th("variables.fontSize.base", "em")};
+    font-size: ${th("fontSize.base", "em")};
   }
 
   body {
@@ -93,19 +93,18 @@ const GlobalStyle = createGlobalStyle`
   h1,
   h2,
   h3 {
-    font-family: ${th("typography.title")};    
+    font-family: ${th("typographies.title")};    
     font-weight: bold;
-    text-transform: uppercase;
   }
 
   h1 {
-    font-size: ${th("variables.fontSize.header.big")};
+    font-size: ${th("fontSize.header.big")};
   }
   h2 {
-    font-size: ${th("variables.fontSize.header.medium")};
+    font-size: ${th("fontSize.header.medium")};
   }
   h3 {
-    font-size: ${th("variables.fontSize.header.small")};
+    font-size: ${th("fontSize.header.small")};
   }
 
   a {
