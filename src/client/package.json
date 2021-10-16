@@ -14,14 +14,16 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "styled-bootstrap-grid": "^3.1.0",
-    "styled-components": "^5.2.3"
+    "styled-components": "^5.2.3",
+    "wait-on": "^6.0.0"
   },
   "scripts": {
-    "start": "set BROWSER=none && react-scripts start",
+    "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
+    "react-start": "set BROWSER=none && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron ."
+    "electron-start": "wait-on http://localhost:3000 && electron ."
   },
   "eslintConfig": {
     "extends": "react-app"
