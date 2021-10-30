@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import Tags from "./Tags";
 import { H2 } from "../../components/base/Headers";
+import { ButtonPrimary } from "../../components/base/Buttons";
 import { WorldImage, Worlds, World, WorldName } from "./styled";
 
 const WorldList = () => {
@@ -38,6 +39,9 @@ const WorldList = () => {
             </World>
           );
         })}
+        <ButtonPrimary onClick={() => history.push("/new-world")}>
+          Créer un monde
+        </ButtonPrimary>
       </Worlds>
     </div>
   );

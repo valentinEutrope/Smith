@@ -1,3 +1,5 @@
+const { exec } = require("child_process");
+const { SIGTERM, SIGHUP } = require("constants");
 const electron = require("electron");
 // Module to control application life.
 const app = electron.app;
@@ -34,6 +36,17 @@ function createWindow() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on("ready", createWindow);
+
+// on before window close
+app.on("before-quit", () => {
+  exec("taskkill -F -IM node.exe", (errExcept, out, err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log(out);
+    }
+  });
+});
 
 // Quit when all windows are closed.
 app.on("window-all-closed", function () {
