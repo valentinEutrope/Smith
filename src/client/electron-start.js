@@ -7,6 +7,7 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 const path = require("path");
+const isDev = require("electron-is-dev");
 const url = require("url");
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -14,11 +15,29 @@ const url = require("url");
 let mainWindow;
 
 function createWindow() {
+  const { screen } = require("electron");
+  const primaryDisplay = screen.getPrimaryDisplay();
+  const { width, height } = primaryDisplay.workAreaSize;
   // Create the browser window.
-  mainWindow = new BrowserWindow({ width: 800, height: 600 });
+  mainWindow = new BrowserWindow({
+    width: width,
+    height: height,
+    webPreferences: {
+      preload: path.join(__dirname, "electron-preload.js"),
+      nodeIntegration: false,
+    },
+  });
 
-  // and load the index.html of the app.
-  mainWindow.loadURL("http://localhost:3000");
+  // and load the content of the app.
+  mainWindow.loadURL(
+    isDev
+      ? "http://localhost:3000"
+      : url.format({
+          pathname: path.join(__dirname, "build/index.html"),
+          protocol: "file:",
+          slashes: true,
+        })
+  );
 
   // Open the DevTools.
   //   mainWindow.webContents.openDevTools();
