@@ -21,8 +21,8 @@ const Tag = styled.span`
 const Tags = ({ tags }) => {
   return (
     <TagsList>
-      {tags.map((tag) => (
-        <Tag>{tag}</Tag>
+      {tags.map((tag, key) => (
+        <Tag key={`tag-${key}`}>{tag}</Tag>
       ))}
     </TagsList>
   );
