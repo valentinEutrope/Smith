@@ -34,3 +34,7 @@ export const WorldImage = styled.img`
   width: 8rem;
   height: 8rem;
 `;
+
+export const NoWorldMessage = styled.div`
+  text-align: center;
+`;
