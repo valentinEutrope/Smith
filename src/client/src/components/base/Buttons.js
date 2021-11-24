@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 import { th, space } from "../../config/theme/themeHelpers";
 
+const SIZES = {
+  default: space(["xs", "md"]),
+  mini: "0.5rem",
+  small: space(["xs"]),
+  large: space(["md", "lg"]),
+};
+
 export const Button = styled.button`
-  padding: ${space(["xs", "md"])};
+  padding: ${(props) => SIZES[props.size] || SIZES.default};
   font-size: 1.25rem;
-  text-transform: uppercase;
   cursor: pointer;
 
   border: 0;
@@ -31,9 +37,19 @@ export const ButtonPrimary = styled(Button)`
 
   &:hover {
     color: ${th("colors.white.200")};
-    background-color: ${th("colors.primary.700")};
+    background-color: ${th("colors.primary.500")};
     transform: translateY(-5px);
     box-shadow: 0px 6px 10px ${th("colors.primary.200")};
+  }
+`;
+
+export const ButtonSecondary = styled(ButtonPrimary)`
+  background-color: ${th("colors.secondary.200")};
+
+  &:hover {
+    color: ${th("colors.white.200")};
+    background-color: ${th("colors.secondary.500")};
+    box-shadow: 0px 6px 10px ${th("colors.secondary.200")};
   }
 `;
 
