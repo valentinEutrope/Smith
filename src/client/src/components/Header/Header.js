@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { HeaderContent } from "./styled";
 
 const Header = () => {
   return (
     <HeaderContent>
-      <img src="assets/logo.svg" alt="logo" />
+      <Link to="/">
+        <img src="assets/logo.svg" alt="logo" />
+      </Link>
     </HeaderContent>
   );
 };
