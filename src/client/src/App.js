@@ -7,6 +7,7 @@ import Home from "./Pages/Home";
 import CharacterSheetTemplate from "./Pages/SheetTemplates/CharacterSheetTemplate";
 import World from "./Pages/World";
 import NewWorld from "./Pages/NewWorld";
+import Header from "./components/Header";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <GlobalStyle />
       <Providers>
         <Router>
+          <Header />
           <Switch>
             <Route exact path="/">
               <Home />
