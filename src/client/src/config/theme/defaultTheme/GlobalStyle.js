@@ -70,16 +70,6 @@ const GlobalStyle = createGlobalStyle`
     cursor: pointer;
   }
 
-  /* Remove all animations and transitions for people that prefer not to see them */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
   /* ==== Typography ==== */
   html {
     font-size: ${th("fontSize.base", "em")};

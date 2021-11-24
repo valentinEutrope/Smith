@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
 
-import { th } from "../../config/theme/themeHelpers";
+import { th, space } from "../../config/theme/themeHelpers";
 
 const baseStyle = () => css`
   color: ${th("colors.primary")};
+  padding: ${space(["xs", "none"])};
   text-align: center;
 `;
 
