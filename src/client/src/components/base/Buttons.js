@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { th, space } from "../../config/theme/themeHelpers";
+import { th, space } from "@config/theme/themeHelpers";
 
 const SIZES = {
   default: space(["xs", "md"]),

@@ -1,13 +1,13 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import GlobalStyle from "./config/theme/defaultTheme/GlobalStyle";
+import GlobalStyle from "@config/theme/defaultTheme/GlobalStyle";
 
 import Providers from "./Providers";
-import Home from "./Pages/Home";
-import CharacterSheetTemplate from "./Pages/SheetTemplates/CharacterSheetTemplate";
-import World from "./Pages/World";
-import NewWorld from "./Pages/NewWorld";
-import Header from "./components/Header";
+import Home from "@pages/Home";
+import CharacterSheetTemplate from "@pages/SheetTemplates/CharacterSheetTemplate";
+import World from "@pages/World";
+import NewWorld from "@pages/NewWorld";
+import Header from "@components/Header";
 
 const App = () => {
   return (

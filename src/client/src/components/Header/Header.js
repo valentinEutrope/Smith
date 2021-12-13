@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { ButtonSecondary } from "../base/Buttons";
+import { ButtonSecondary } from "@base/Buttons";
 import { HeaderContent } from "./styled";
 
 const Header = () => {
