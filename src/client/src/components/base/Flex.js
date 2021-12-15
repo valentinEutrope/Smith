@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-import { th, space } from "../../config/theme/themeHelpers";
+import { th, space } from "@config/theme/themeHelpers";
 
 export const Flex = styled.div`
   display: flex;

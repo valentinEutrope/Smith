@@ -2,9 +2,9 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 import Tags from "./Tags";
-import { FlexCentered } from "../../components/base/Flex";
-import { H2 } from "../../components/base/Headers";
-import { ButtonPrimary } from "../../components/base/Buttons";
+import { FlexCentered } from "@components/base/Flex";
+import { H2 } from "@components/base/Headers";
+import { ButtonPrimary } from "@components/base/Buttons";
 import { WorldImage, Worlds, World, WorldName, NoWorldMessage } from "./styled";
 
 const WorldList = () => {
