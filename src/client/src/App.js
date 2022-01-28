@@ -8,6 +8,7 @@ import CharacterSheetTemplate from "@pages/SheetTemplates/CharacterSheetTemplate
 import World from "@pages/World";
 import NewWorld from "@pages/NewWorld";
 import Header from "@components/Header";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           </Switch>
         </Router>
       </Providers>
+      <Toaster />
     </>
   );
 };

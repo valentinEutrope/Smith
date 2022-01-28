@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import Tags from "./Tags";
@@ -6,26 +6,25 @@ import { FlexCentered } from "@components/base/Flex";
 import { H2 } from "@components/base/Headers";
 import { ButtonPrimary } from "@components/base/Buttons";
 import { WorldImage, Worlds, World, WorldName, NoWorldMessage } from "./styled";
+import toast from "react-hot-toast";
 
 const WorldList = () => {
   const history = useHistory();
 
-  const worlds = [
-    {
-      id: 0,
-      name: "World 1",
-      tags: ["dark-fantasy", "magie", "distopie"],
-      imgUrl:
-        "https://mir-s3-cdn-cf.behance.net/project_modules/1400/95c73850815079.58da751bb31b7.jpg",
-    },
-    {
-      id: 1,
-      name: "World 2",
-      tags: ["steampunk", "futuriste"],
-      imgUrl:
-        "https://img.etsystatic.com/il/9056ab/904031544/il_fullxfull.904031544_gx1f.jpg?version=0",
-    },
-  ];
+  // prepare worlds to be set by async backend query
+  const [worlds, setWorlds] = useState([]);
+
+  // Set the worlds only once
+  useEffect(() => {
+    window.api.getWorldList().then(
+      (result) => {
+        setWorlds(result);
+      },
+      (err) => {
+        toast.error(err.message, { id: "errGetWorldList" });
+      }
+    );
+  }, [worlds]);
 
   return (
     <>
@@ -36,7 +35,7 @@ const WorldList = () => {
             return (
               <World onClick={() => history.push(`/world/${world.id}`)}>
                 <WorldName>{world.name}</WorldName>
-                <Tags tags={world.tags} />
+                {world.tags.length ? <Tags tags={world.tags} /> : null}
                 <WorldImage src={world.imgUrl} />
               </World>
             );
