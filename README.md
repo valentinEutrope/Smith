@@ -8,6 +8,11 @@ Smith is an Electron React app to manage a role play game.
 
 # Starting the local app
 
+### launch automatically from the root :
+`npm start`
+
+### launch manualy :
+
 `cd src/client && npm start`
 When react app is running, in another terminal
 `cd src/client && npm run electron`
