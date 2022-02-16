@@ -1,6 +1,5 @@
 import styled from "styled-components";
-
-import { th, space } from "../../config/theme/themeHelpers";
+import { space } from "@config/theme/themeHelpers";
 
 export const HeaderContent = styled.div`
   display: flex;

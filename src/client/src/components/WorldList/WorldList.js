@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import Tags from "./Tags";
-import { FlexCentered } from "@components/base/Flex";
+import { Flex, FlexCentered } from "@components/base/Flex";
 import { H2 } from "@components/base/Headers";
 import { ButtonPrimary } from "@components/base/Buttons";
-import { Flex } from "@components/base/Flex";
-import { WorldImage, World, WorldName, NoWorldMessage } from "./styled";
+import { WorldImage, World, WorldName } from "./styled";
 import toast from "react-hot-toast";
 
 const WorldList = () => {
@@ -40,10 +39,10 @@ const WorldList = () => {
           })}
         </Flex>
       ) : (
-        <NoWorldMessage>
+        <FlexCentered>
           Vous n'avez pas de mondes disponibles, vous pouvez en importer ou en
           créer un nouveau
-        </NoWorldMessage>
+        </FlexCentered>
       )}
       <FlexCentered>
         <ButtonPrimary onClick={() => history.push("/new-world")}>
