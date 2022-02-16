@@ -72,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
 
   /* ==== Typography ==== */
   html {
-    font-size: ${th("fontSize.base", "em")};
+    font-size: ${th("fontSize.base", "rem")};
   }
 
   body {
@@ -83,7 +83,7 @@ const GlobalStyle = createGlobalStyle`
   h1,
   h2,
   h3 {
-    font-family: ${th("typographies.title")};    
+    font-family: ${th("typography.title")};    
     font-weight: bold;
   }
 

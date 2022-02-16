@@ -1,5 +1,6 @@
 import { colors } from "./colors";
-import { typographies } from "./typographies";
+import { boxShadows } from "./boxShadows";
+import { typography } from "./typography";
 import breakpoints from "./breakpoints";
 import { spaces } from "./spaces";
 import { sizes } from "./sizes";
@@ -8,7 +9,8 @@ import variables from "./variables";
 
 export default {
   colors,
-  typographies,
+  boxShadows,
+  typography,
   breakpoints,
   spaces,
   sizes,
