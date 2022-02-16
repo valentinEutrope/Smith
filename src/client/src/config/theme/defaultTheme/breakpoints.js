@@ -1,7 +1,6 @@
-const xs = "320px";
-const sm = "568px";
-const md = "768px";
-const lg = "1024px";
-const xl = "1680px";
+const largeMobile = "395px";
+const tablet = "768px";
+const desktop = "1024px";
+const largeDesktop = "1440px";
 
-export default { xs, sm, md, lg, xl };
+export default { largeMobile, tablet, desktop, largeDesktop };
