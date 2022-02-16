@@ -21,7 +21,7 @@ const WorldList = () => {
         toast.error(err.message, { id: "errGetWorldList" });
       }
     );
-  }, [worlds]);
+  }, [setWorlds]);
 
   return (
     <>
@@ -30,7 +30,10 @@ const WorldList = () => {
         <Flex direction="column" alignItems="center" gap="2rem">
           {worlds.map((world) => {
             return (
-              <World onClick={() => history.push(`/world/${world.id}`)}>
+              <World
+                key={`world-${world.id}`}
+                onClick={() => history.push(`/world/${world.id}`)}
+              >
                 <WorldName>{world.name}</WorldName>
                 {world.tags.length ? <Tags tags={world.tags} /> : null}
                 <WorldImage src={world.imgUrl} />
