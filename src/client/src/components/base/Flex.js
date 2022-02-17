@@ -6,6 +6,7 @@ export const Flex = styled.div`
   align-items: ${(props) => props.alignItems || "initial"};
   flex-direction: ${(props) => props.direction || "row"};
   gap: ${(props) => props.gap || "1rem"};
+  wrap: ${(props) => props.wrap || "initial"};
 `;
 
 export const FlexCentered = styled(Flex)`
