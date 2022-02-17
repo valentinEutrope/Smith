@@ -12,7 +12,6 @@ export const DashboardContainer = styled.div`
 export const DashboardItem = styled.div`
   display: flex;
   justify-content: center;
-  //   align-items: center;
   position: relative;
   z-index: 1;
   padding: 1rem;
