@@ -27,7 +27,7 @@ const App = () => {
             <Route exact path="/template/character-sheet">
               <CharacterSheetTemplate />
             </Route>
-            <Route exact path="/world/:ID">
+            <Route exact path="/world/:id">
               <World />
             </Route>
           </Switch>
