@@ -33,6 +33,16 @@ contextBridge.exposeInMainWorld("api", {
       });
     });
   },
+  getWorld: async (id) => {
+    return new Promise((resolve, reject) => {
+      const query = "SELECT * FROM world WHERE id = " + id;
+
+      db.all(query, (err, rows) => {
+        if (err) reject(err);
+        resolve(rows[0]);
+      });
+    });
+  },
 });
 
 // All of the Node.js APIs are available in the preload process.
