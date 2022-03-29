@@ -1,5 +1,3 @@
-import React from "react";
-
 import WorldList from "@components/WorldList";
 
 const Home = () => {

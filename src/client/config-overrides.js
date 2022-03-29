@@ -9,6 +9,7 @@ module.exports = {
       "@config": "./src/config",
       "@pages": "./src/Pages",
       "@helpers": "./src/helpers",
+      "@models": "./src/db/models",
     })(config);
 
     return config;

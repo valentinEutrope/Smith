@@ -16,7 +16,7 @@ const Tags = ({ tags }) => {
   return (
     <FlexCentered>
       {tags.map((tag, key) => (
-        <Tag key={`tag-${key}`}>{tag}</Tag>
+        <Tag key={`tag-${key}`}>{tag.dataValues.tag}</Tag>
       ))}
     </FlexCentered>
   );

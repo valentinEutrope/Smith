@@ -14,13 +14,14 @@
     "react-hot-toast": "^2.2.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
+    "sequelize": "^6.17.0",
     "sqlite3": "^5.0.2",
     "styled-components": "^5.3.3",
     "wait-on": "^6.0.0"
   },
   "scripts": {
     "start": "concurrently \"npm run react-start\" \"npm run electron-start\"",
-    "react-start": "set BROWSER=none && react-app-rewired start",
+    "react-start": "react-app-rewired start",
     "build": "react-app-rewired build && electron-builder",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",

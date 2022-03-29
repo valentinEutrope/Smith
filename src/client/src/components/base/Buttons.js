@@ -62,10 +62,10 @@ export const ButtonSuccess = styled(Button)`
 `;
 
 export const ButtonDanger = styled(Button)`
-  background-color: ${th("colors.danger")};
+  background-color: ${th("colors.red")};
   color: ${th("colors.white")};
 
   &:hover {
-    background-color: ${th("colors.danger.700")};
+    background-color: ${th("colors.red.700")};
   }
 `;
