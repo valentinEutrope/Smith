@@ -4,7 +4,7 @@ Smith is an Electron React app to manage a role play game.
 
 # Install
 
-`npm i && cd src/client && npm i && cd ../../`
+`npm i`
 
 # Starting the local app
 
