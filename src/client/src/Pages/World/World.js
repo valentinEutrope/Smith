@@ -19,6 +19,7 @@ const World = () => {
       },
       (err) => {
         toast.error(err.message, { id: "errGetWorld" });
+        setLoading(false);
       }
     );
   }, [id, setWorldData]);
