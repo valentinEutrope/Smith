@@ -22,6 +22,7 @@ const WorldList = () => {
       },
       (err) => {
         toast.error(err.message, { id: "errGetWorldList" });
+        setLoading(false);
       }
     );
   }, [setWorlds]);
