@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -6,29 +6,24 @@ import Tags from "./Tags";
 import { Flex, FlexCentered } from "@components/base/Flex";
 import { H2 } from "@components/base/Headers";
 import { ButtonPrimary } from "@components/base/Buttons";
+import useRequest from "@helpers/useRequest";
 import { WorldImage, World, WorldName } from "./styled";
 
 const WorldList = () => {
   const history = useHistory();
-  const [worlds, setWorlds] = useState([]);
-  const [loading, setLoading] = React.useState(true);
 
-  useEffect(() => {
-    setLoading(true);
-    window.api.getWorldList().then(
-      (response) => {
-        setWorlds(response);
-        setLoading(false);
-      },
-      (err) => {
-        toast.error(err.message, { id: "errGetWorldList" });
-        setLoading(false);
-      }
-    );
-  }, [setWorlds]);
+  const {
+    data: worlds,
+    loading,
+    error,
+  } = useRequest({ request: window.api.getWorldList() });
 
   if (loading) {
     return <div>...</div>;
+  }
+
+  if (error) {
+    toast.error(error.message, { id: "errGetWorldList" });
   }
 
   return (
