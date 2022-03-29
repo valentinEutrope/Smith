@@ -25,9 +25,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^6.0.1",
-    "jake": "^10.8.2",
-    "jake-synchronoustasks": "^1.0.0"
+    "concurrently": "^6.0.1"
   },
   "dependencies": {
     "wait-on": "^6.0.0"
