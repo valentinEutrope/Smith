@@ -46,7 +46,10 @@ const Dashboard = () => {
     <FlexCentered>
       <DashboardContainer>
         {dashboardItems.map((item) => (
-          <DashboardItem backgroundUrl={item.backgroundUrl}>
+          <DashboardItem
+            key={`dashboard-item-${item.title}`}
+            backgroundUrl={item.backgroundUrl}
+          >
             <DashboardItemTitle>{item.title}</DashboardItemTitle>
             <DashboardItemOverlay></DashboardItemOverlay>
           </DashboardItem>
