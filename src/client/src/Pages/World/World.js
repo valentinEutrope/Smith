@@ -15,10 +15,6 @@ const World = () => {
     error,
   } = useRequest({ request: window.api.getWorld(id) });
 
-  if (loading) {
-    return <div>...</div>;
-  }
-
   if (error) {
     toast.error(error.message, { id: "errGetWorld" });
   }
