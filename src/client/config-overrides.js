@@ -8,6 +8,7 @@ module.exports = {
       "@assets": "./src/assets",
       "@config": "./src/config",
       "@pages": "./src/Pages",
+      "@helpers": "./src/helpers",
     })(config);
 
     return config;
