@@ -1,6 +1,6 @@
 # About App
 
-Smith is an Electron React app to manage a role play game.
+Smith is an Electron React application used to create and manage your own role play game.
 
 # Install
 
