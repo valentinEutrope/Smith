@@ -31,7 +31,12 @@ const SheetTemplate = () => {
         <SidebarCreation selectedElement={selectedElement} />
         <Sheet>
           {templateData.rows.map((row) => (
-            <Row key={`row-${row.name}`}>coucou</Row>
+            <Row
+              key={`row-${row.name}`}
+              onClick={() => setSelectedElement(row.name)}
+            >
+              {row.name}
+            </Row>
           ))}
           <IconButton
             title="Ajouter une ligne"
