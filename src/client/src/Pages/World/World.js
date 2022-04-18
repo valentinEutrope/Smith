@@ -26,7 +26,7 @@ const World = () => {
   return (
     <div>
       <H2>{worldData.name}</H2>
-      <Dashboard />
+      <Dashboard worldId={id} />
     </div>
   );
 };

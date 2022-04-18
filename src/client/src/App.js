@@ -4,8 +4,8 @@ import GlobalStyle from "@config/theme/defaultTheme/GlobalStyle";
 
 import Providers from "./Providers";
 import Home from "@pages/Home";
-import CharacterSheetTemplate from "@pages/SheetTemplates/CharacterSheetTemplate";
 import World from "@pages/World";
+import SheetTemplate from "@pages/SheetTemplate";
 import NewWorld from "@pages/NewWorld";
 import Header from "@components/Header";
 import { Toaster } from "react-hot-toast";
@@ -24,11 +24,11 @@ const App = () => {
             <Route exact path="/new-world">
               <NewWorld />
             </Route>
-            <Route exact path="/template/character-sheet">
-              <CharacterSheetTemplate />
-            </Route>
             <Route exact path="/world/:id">
               <World />
+            </Route>
+            <Route exact path="/world/:id/templates">
+              <SheetTemplate />
             </Route>
           </Switch>
         </Router>

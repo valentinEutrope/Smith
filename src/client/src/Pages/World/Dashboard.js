@@ -1,5 +1,6 @@
 import React from "react";
-
+import { useHistory } from "react-router-dom";
+import PropTypes from "prop-types";
 import { FlexCentered } from "@components/base/Flex";
 import {
   DashboardContainer,
@@ -8,12 +9,15 @@ import {
   DashboardItemOverlay,
 } from "./styled";
 
-const Dashboard = () => {
+const Dashboard = ({ worldId }) => {
+  const history = useHistory();
+
   const dashboardItems = [
     {
       title: "Modèles de fiches",
       backgroundUrl:
         "https://lh3.googleusercontent.com/-WziC2h5zVSQ/WSVY5DyoMtI/AAAAAAAACvk/0y9QO0txb707vHRbT79XGbaLsSXPXl_DwCL0B/h760/2017-05-24.png",
+      url: `/world/${worldId}/templates`,
     },
     {
       title: "Personnages",
@@ -49,6 +53,7 @@ const Dashboard = () => {
           <DashboardItem
             key={`dashboard-item-${item.title}`}
             backgroundUrl={item.backgroundUrl}
+            onClick={() => history.push(item.url)}
           >
             <DashboardItemTitle>{item.title}</DashboardItemTitle>
             <DashboardItemOverlay></DashboardItemOverlay>
@@ -57,6 +62,10 @@ const Dashboard = () => {
       </DashboardContainer>
     </FlexCentered>
   );
+};
+
+Dashboard.propTypes = {
+  worldId: PropTypes.string.isRequired,
 };
 
 export default Dashboard;
