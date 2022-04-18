@@ -6,6 +6,8 @@
   "scripts": {
     "start": "cd src/client && npm run start",
     "postinstall": "cd src/client && npm i",
+    "client:i": "cd src/client && npm i",
+    "client:r": "cd src/client && npm remove",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
