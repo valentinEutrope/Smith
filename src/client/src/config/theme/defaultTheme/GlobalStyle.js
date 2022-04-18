@@ -106,6 +106,18 @@ const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${th("colors.white.500")};
   }
+
+  /* ==== Print rules ==== */
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  @media print {
+    html, body {
+      width: 210mm;
+      height: 297mm;
+    }
+  }
 `;
 
 export default GlobalStyle;

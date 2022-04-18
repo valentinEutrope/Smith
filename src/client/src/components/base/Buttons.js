@@ -26,7 +26,7 @@ export const Button = styled.button`
 `;
 
 export const RoundButton = styled(Button)`
-  border-radius: ${(props) => props.radius || "32"}px;
+  border-radius: ${(props) => props.radius || "100"}%;
 `;
 
 export const ButtonPrimary = styled(Button)`
@@ -49,6 +49,34 @@ export const ButtonSecondary = styled(ButtonPrimary)`
     color: ${th("colors.white.500")};
     background-color: ${th("colors.secondary.700")};
     box-shadow: 0px 4px 6px ${th("colors.secondary.500")};
+  }
+`;
+
+export const ButtonTertiary = styled(ButtonPrimary)`
+  background-color: ${th("colors.tertiary.500")};
+
+  &:hover {
+    color: ${th("colors.white.500")};
+    background-color: ${th("colors.tertiary.700")};
+    box-shadow: 0px 4px 6px ${th("colors.tertiary.500")};
+  }
+`;
+
+export const AddButton = styled(ButtonPrimary)`
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  transition: background-color 200ms, box-shadow 200ms, color 200ms;
+
+  span {
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    background-color: ${th("colors.tertiary.700")};
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transform: none;
   }
 `;
 
