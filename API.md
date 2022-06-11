@@ -1,163 +1,110 @@
-# API documentation
+# API Documentation
 
-This API uses messages with IPC classes of electron.
+For using API on front side, use `window.api`
 
-It'll be described as :
+<details><summary>window.api.models</summary>
 
-<details><summary> query-channel [parameter:type,...]
+Carries all informations about the models
 
-> Description
-
-</summary>
-
-## success-channel
-
-```JSON
-JSON response
-```
-
-## error-channel
-
-```JSON
-JSON response
+```json
+{
+  <Structure>
+  "ModelName" : {
+    "attributes": {"attribute":{"property":<value>}},
+    "associations": ["associationName"]
+  },
+  <Example>
+  "WorldModel" : {
+    "attributes": {
+        "id": {
+            "type": "integer",
+            "primaryKey": true,
+            "autoIncrement": true
+        },
+        "name": {
+            "type": "string",
+            "allowNull": false,
+            "unique": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "imageURL": {
+            "type": "string"
+        }
+    },
+    "associations": [
+        "tags"
+    ]
+  }
+}
 ```
 
 </details>
 
-<hr>
+<details><summary>window.api.initDB()</summary>
 
-<details><summary> get-worlds-list
+This function is here to create fixtures into DB.<br/>
+**WARNING**: It will recreate ALL the DB structure and reset all the data to basic ones, be sure of what you are doing using it !
 
-> Send back a list of the worlds available
+- return: nothing
+- errors: sqlite errors
 
-</summary>
+</details>
 
-## worlds-list
+<details><summary>window.api.getAllWorlds(extended, attributes, filters)</summary>
 
-```JSON
-[
+- Parameters:
+
+  - extended:
+    An array of associations, found in the window.api.models models available.
+
+  - attributes:
+    An array of object with attributes we select for each model, found in the window.api.models models available
+
+  - filters:
+    An array of filters (e.g. WHERE clauses) for the query that'll be executed.
+    - logic : Logic applied to the sub-filters array if there is one.
+    - value : comparison value of the filter
+    - model : The model name
+    - attribute : the model target attribute
+    - operator : SQL operator
+    - filters: array of filters
+
+EXAMPLE :
+
+- All worlds with tags :
+  `getAllWorlds(["tags"])`
+- All worlds IDs :
+  `getAllWorlds(null,[model: "WorldModel", attributes: ["id"]])`
+- All worlds with id>2 AND (tag=="ff" OR tag=="dystopie"):
+  ```javascript
+  getAllWorlds(["tags"], null, [
     {
-        "ID":number,
-        "name":string,
-        "description":string,
-        "image":string
-    }
-]
-```
-
-## error-worlds-list
-
-```JSON
-{
-    "message": "Failed to load the worlds list",
-    "errors": [
-        CASE: no world => "No world available",
-        CASE: db access => "Can't access database"
-    ]
-}
-```
-
-</details>
-
-<details><summary> get-world-details [worldID:number]
-
-> Send back the detailed informations of a given world
-
-</summary>
-
-## world-details
-
-```JSON
-{
-    "id": number,
-    "name":string,
-    "description":string,
-    "image":file?string?,
-    "tags":[string],
-    "maps":[
-        {
-            "id": number,
-            "name":string,
-            "description":string,
-            "image":file?string?
-        }
-    ],
-    "playlists":[
-        {
-            "id":number,
-            "name":string,
-            "description":string,
-            "image":file?string?,
-            "tags":[string]
-        }
-    ],
-    "components":[
-        {
-            "id":number,
-            "name":string,
-            "description":string,
-            "image":file?string?,
-            "model":number
-        }
-    ],
-    "characterSheets":[
-        {
-            "id":number,
-            "name":string,
-            "description":string,
-            "image":string,
-            "model":number
-        }
-    ]
-}
-```
-
-## error-worlds-list
-
-```JSON
-{
-    "message": "Failed to load the world {id} details",
-    "errors": [
-        CASE: db access => "Can't access database",
-        CASE: world not found => "This world doesn't exists"
-    ]
-}
-```
-
-</details>
-
-<details><summary> get-maps-list [worldID:number(optional)]
-
-> Send back the list of maps available globally OR only for one world
-
-</summary>
-
-## maps-list
-
-```JSON
-[
+      model: "WorldTag",
+      attribute: "id",
+      value: 2,
+      operator: ">",
+    },
     {
-        "id":number,
-        "name":string,
-        "description":string,
-        "image":file?string?,
-        "tags":[string]
-    }
-]
-```
-
-## error-maps-list
-
-```JSON
-{
-    "message": "Failed to load the world {id} details",
-    "errors": [
-        CASE: db access => "Can't access database",
-        CASE: world not found => "This world doesn't exists",
-        CASE: no maps list globally => "No map available",
-        CASE: no maps list for the given world => "No map available for this world"
-    ]
-}
-```
-
+      logic: "OR",
+      filters: [
+        {
+          model: "TagModel",
+          attribute: "tag",
+          value: "ff",
+          operator: "=",
+        },
+        {
+          model: "TagModel",
+          attribute: "tag",
+          value: "dystopie",
+          operator: "=",
+        },
+      ],
+    },
+  ]);
+  ```
+- Return: World array
+- errors: sqlite errors | bad parameters format errors
 </details>
