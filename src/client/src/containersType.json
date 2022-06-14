@@ -1,0 +1,17 @@
+{
+    "containerTypeName": "newContainerType",
+    "rows": [
+        {
+            "rowName": "newContainerType_R0",
+            "height": null,
+            "elements": [
+                {
+                    "elementName": "newContainerType_R0E0",
+                    "width": null,
+                    "type": "Input|Label|Image|[...]",
+                    "value": null
+                }
+            ]
+        }
+    ]
+}

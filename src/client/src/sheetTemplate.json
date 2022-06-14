@@ -1,0 +1,61 @@
+{
+    "templateName": "Template fiche de personnage",
+    "fontFamily": "default",
+    "pages": [{
+        "name": "P0",
+        "title": "Informations principales",
+        "backgroundUrl": "",
+        "border" : {
+            "type": "",
+            "url": ""
+        },
+        "rows": [
+            {
+                "rowName": "P0R0",
+                "height": null,
+                "style": "",
+                "position": 0,
+                "blocks": [
+                    {
+                        "name": "P0R0B0",
+                        "width": null,
+                        "type": "",
+                        "position": 0,
+                        "border" : {
+                            "type": "",
+                            "url": ""
+                        }
+                    },
+                    {
+                        "name": "P0R0B1",
+                        "width": null,
+                        "type": "",
+                        "position": 1,
+                        "border" : {
+                            "type": "",
+                            "url": ""
+                        }
+                    }
+                ]
+            },
+            {
+                "rowName": "P0R1",
+                "height": null,
+                "style": "",
+                "position": 1,
+                "blocks": [
+                    {
+                        "name": "P0R1B0",
+                        "width": null,
+                        "type": "",
+                        "position": 0,
+                        "border" : {
+                            "type": "",
+                            "url": ""
+                        }
+                    }
+                ]
+            }
+        ]
+    }]
+}
