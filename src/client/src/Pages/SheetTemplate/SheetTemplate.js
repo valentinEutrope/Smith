@@ -3,21 +3,24 @@ import { BsBoxArrowDown } from "react-icons/bs";
 
 import SidebarCreation from "@components/SidebarCreation";
 import IconButton from "@components/base/IconButton";
-import { Sheet, MainContainer, Row } from "./styled";
+import { H3 } from "@components/base/Headers";
+import Rows from "./Rows";
+import { Sheet, MainContainer } from "./styled";
 
 const SheetTemplate = () => {
-  const [selectedElement, setSelectedElement] = useState("r1");
+  const [selectedElement, setSelectedElement] = useState("");
   const [templateData, setTemplateData] = useState({
-    name: "My beautiful template",
+    templateName: "Template fiche de personnage",
+    fontFamily: "default",
     rows: [],
   });
 
-  const addRow = () => {
+  const addRow = (templateData) => {
     let newTemplateData = templateData;
     const newRow = {
-      name: `r${templateData.rows.length + 1}`,
+      name: `R${templateData.rows.length + 1}`,
       height: null,
-      containers: [],
+      blocks: [],
     };
 
     newTemplateData.rows.push(newRow);
@@ -25,27 +28,29 @@ const SheetTemplate = () => {
   };
 
   return (
-    <div>
-      <div>{templateData.name}</div>
+    <>
+      <H3>{templateData.templateName}</H3>
       <MainContainer>
-        <SidebarCreation selectedElement={selectedElement} />
+        <SidebarCreation
+          templateData={templateData}
+          setTemplateData={setTemplateData}
+          selectedElement={selectedElement}
+        />
         <Sheet>
-          {templateData.rows.map((row) => (
-            <Row
-              key={`row-${row.name}`}
-              onClick={() => setSelectedElement(row.name)}
-            >
-              {row.name}
-            </Row>
-          ))}
+          {templateData.rows && (
+            <Rows
+              rows={templateData.rows}
+              setSelectedElement={setSelectedElement}
+            />
+          )}
           <IconButton
             title="Ajouter une ligne"
             icon={<BsBoxArrowDown />}
-            callback={() => addRow()}
+            callback={() => addRow(templateData)}
           />
         </Sheet>
       </MainContainer>
-    </div>
+    </>
   );
 };
 

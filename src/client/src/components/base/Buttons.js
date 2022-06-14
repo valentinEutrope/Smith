@@ -81,11 +81,11 @@ export const AddButton = styled(ButtonPrimary)`
 `;
 
 export const ButtonSuccess = styled(Button)`
-  background-color: ${th("colors.success")};
+  background-color: ${th("colors.green")};
   color: ${th("colors.white")};
 
   &:hover {
-    background-color: ${th("colors.success.700")};
+    background-color: ${th("colors.green.700")};
   }
 `;
 
