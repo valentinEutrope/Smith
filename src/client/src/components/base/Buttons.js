@@ -11,7 +11,8 @@ const SIZES = {
 
 export const Button = styled.button`
   padding: ${(props) => SIZES[props.size] || SIZES.default};
-  font-size: 1.25rem;
+  height: 5rem;
+  font-size: ${th("fontSizes.medium")};
   cursor: pointer;
   border: 0;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);

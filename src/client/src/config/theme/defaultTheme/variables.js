@@ -1,7 +1,7 @@
-export const baseFontSize = 1;
-export const lineHeight = 1.3;
+export const scaleFontSize = 1.414;
+export const lineHeight = 1.6;
 
 export default {
-  baseFontSize,
+  scaleFontSize,
   lineHeight,
 };

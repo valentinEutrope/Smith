@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     height: 100%;
+    font-size: 10px;
   }
 
   body {
@@ -71,13 +72,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   /* ==== Typography ==== */
-  html {
-    font-size: ${th("fontSize.base", "rem")};
-  }
-
   body {
     font-family: ${th("typography.body")}; 
     line-height: ${th("variables.lineHeight")};
+    font-size: ${th("fontSize.regular")};
   }
 
   h1,
@@ -88,13 +86,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: ${th("fontSize.header.big")};
+    font-size: ${th("fontSize.extraLarge")};
   }
   h2 {
-    font-size: ${th("fontSize.header.medium")};
+    font-size: ${th("fontSize.veryLarge")};
   }
   h3 {
-    font-size: ${th("fontSize.header.small")};
+    font-size: ${th("fontSize.large")};
+  }
+  h4 {
+    font-size: ${th("fontSize.medium")};
   }
 
   a {

@@ -10,15 +10,20 @@ const baseStyle = () => css`
 
 export const H1 = styled.h1`
   ${baseStyle()}
-  font-size: ${th("fontSizes.header.big")};
+  font-size: ${th("fontSizes.extraLarge")};
 `;
 
 export const H2 = styled.h2`
   ${baseStyle()}
-  font-size: ${th("fontSizes.header.medium")};
+  font-size: ${th("fontSizes.veryLarge")};
 `;
 
 export const H3 = styled.h3`
   ${baseStyle()}
-  font-size: ${th("fontSizes.header.small")};
+  font-size: ${th("fontSizes.large")};
+`;
+
+export const H4 = styled.h4`
+  ${baseStyle()}
+  font-size: ${th("fontSizes.medium")};
 `;

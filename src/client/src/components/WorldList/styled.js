@@ -19,8 +19,8 @@ export const World = styled.div`
 `;
 
 export const WorldName = styled.h3`
-  font-size: ${th("fontSizes.header.small")};
   color: ${th("colors.secondary.700")};
+  font-size: ${th("fontSizes.medium")};
 `;
 
 export const WorldImage = styled.img`

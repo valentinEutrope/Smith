@@ -29,5 +29,4 @@ export const BlockContainer = styled.div`
 
 export const Title = styled.h3`
   text-align: center;
-  font-size: ${th("fontSizes.header.small")};
 `;
